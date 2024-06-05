@@ -172,7 +172,7 @@
           4586720813 - Hanavi Triwusono
         </li>
         <p>Merupakan suatu kebahagiaan kehormatan dan kebahagian bagi kami sekeluarga apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memeriahkan acara walimatul khitan putra kami.</p>
-        <span>والسلام عليكم ورحمة الله وبركاته أيضاً</span>
+        <span>والسلام عليكم ورحمة الله وبركاته</span>
         <h3>Yovie Wibiesono</h3>
       </div>
     </div>
@@ -287,11 +287,11 @@
   </script>
 
   <script>
-    const urlParams = new URLSearchParams(window.location.search);
-    const nama = urlParams.get('n') || '';
-    const pronoun = urlParams.get('p') || 'Bapak/Ibu/Saudara/i';
-    const namaContainer = document.querySelector(' .hero h4 span');
-    namaContainer.innerText = `${pronoun} ${nama},`.replace(/ ,$/, ',');
-  </script>
+  const urlParams = new URLSearchParams(window.location.search);
+  const nama = decodeURIComponent(urlParams.get('to') || '');
+  const pronoun = urlParams.get('p') || 'Bapak/Ibu/Saudara/i';
+  const namaContainer = document.querySelector('.hero h4 span');
+  namaContainer.innerText = `${pronoun} ${nama},`.replace(/ ,$/, ',');
+</script>
 </body>
 </html>
